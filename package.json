@@ -1,0 +1,34 @@
+{
+  "name": "node-pool-gulp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nerovnia/node-pool.git"
+  },
+  "author": "Volodymyr Nerovnia <nerv@i.ua>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nerovnia/node-pool/issues"
+  },
+  "homepage": "https://github.com/nerovnia/node-pool#readme",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-javascript-obfuscator": "^1.1.6",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-bulk-importer": "^3.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "require-dir": "^1.2.0",
+    "sass": "^1.48.0",
+    "vinyl-sourcemaps-apply": "^0.2.1"
+  }
+}
