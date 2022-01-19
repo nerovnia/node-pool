@@ -1,6 +1,9 @@
 /*
-  Delete directories for old project 
+  Task:        del-project
+  Description: Delete directories for old project 
+  Command:     gulp del-project --prj <project-name>
 */
+
 const gulp = require('gulp');
 const del = require('del');
 

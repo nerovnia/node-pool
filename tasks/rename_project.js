@@ -1,6 +1,10 @@
 /*
-  Rename directories for project 
+  Task:        rename-project
+  Description: Rename directories for project 
+  Command:     gulp rename-project --old-name <old-project-name> --new-name <new-project-name>
 */
+
+const gulp = require('gulp');
 const fs = require('fs');
 
 const arr_dir = [
@@ -10,7 +14,7 @@ const arr_dir = [
   './src/public/images/'
 ];
 
-gulp.task('rename-project', function () {
+gulp.task('rename-project', function (done) {
   let act_arg = '';
   let old_name = '';
   let new_name = '';
@@ -18,7 +22,7 @@ gulp.task('rename-project', function () {
     if(arg.substring(0,2) === '--') {
       act_arg = arg;
     } else {
-      if(arg.length() != 0) {
+      if(arg.length != 0) {
         switch(act_arg) {
           case '--old-name':
             old_name = arg;
@@ -34,6 +38,7 @@ gulp.task('rename-project', function () {
       for(dir of arr_dir){
         rename(dir, old_name, new_name);
       }
+      done();
       break;    
     }
   }

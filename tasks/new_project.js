@@ -1,9 +1,12 @@
 /*
-  Create directories for new project 
+  Task:        new-project
+  Description: Create directories for new project 
+  Command:     gulp new-project --prj <project-name>
 */
+
 const gulp = require('gulp');
 
-gulp.task('new-project', function () {
+gulp.task('new-project', function (done) {
   let act_arg = '';
   for(let arg of process.argv) {
     if ((arg.length != 0) && (arg.substring(0,2) != '--') && (act_arg === '--prj')) {
