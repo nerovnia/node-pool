@@ -1,0 +1,14 @@
+{
+  "prj": {
+    "cfg": {
+      "backup_dir": "./backup",
+      "arr_src_dir": [
+        "./src/public/javascripts/",
+        "./src/public/stylesheets/",
+        "./src/views/",
+        "./src/public/images/"
+      ]
+    },
+    "all": []
+  }
+}

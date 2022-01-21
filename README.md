@@ -1,13 +1,25 @@
 # node-pool
 ## Pool for node projects
 
+### Install
+
+After install rename prj-conf.template.json to prj-conf.json
+
+### Commands
+
 gulp style
 
-gulp new-project --prj <project-name>
+gulp new-project --prj <project-name> [worked full]
 
-gulp del-project --prj <project-name>
+gulp del-project --prj <project-name> [worked full]
 
 gulp rename-project --old-name <old-project-name> --new-name <new-project-name>
+
+gulp backup-projects
+
+gulp restore-projects
+
+gulp clear-projects
 
 ### List projects directory:
 
@@ -18,3 +30,4 @@ gulp rename-project --old-name <old-project-name> --new-name <new-project-name>
   './src/views/',
 
   './src/public/images/'
+

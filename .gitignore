@@ -110,3 +110,5 @@ dist/
 build/
 .vscode/
 tmp/
+tasks/test.js
+prj-conf.json

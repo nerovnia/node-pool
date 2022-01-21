@@ -5,22 +5,31 @@
 */
 
 const gulp = require('gulp');
-const del = require('del');
+const fs = require('fs-extra');
 
-gulp.task('del-project', function () {
-  let act_arg = '';
-  for(let arg of process.argv) {
-    if ((arg.length != 0) && (arg.substring(0,2) != '--') && (act_arg === '--prj')) {
-        return del(['./src/public/javascripts/' + arg,
-            './src/public/stylesheets/' + arg,
-            './src/views/' + arg,
-            './src/public/images/' + arg], {force:true});
-    }
-    if(arg.substring(0,2) === '--') {
-      act_arg = arg;
-    } else {
-      act_arg = "";
+const cfg_path = './prj-conf.json'
+
+gulp.task('del-project', function (done) {
+  const cfg_obj = fs.readJsonSync(cfg_path, { throws: false });
+  if(cfg_obj !== null) {
+    let act_arg = '';
+    for(let arg of process.argv) {
+      if ((arg.length != 0) && (arg.substring(0,2) != '--') && (act_arg === '--prj')) {
+        if(cfg_obj.prj.all.some(e => e.name === arg)) {
+          cfg_obj.prj.cfg.arr_src_dir.forEach(element => fs.removeSync(element + arg));
+          cfg_obj.prj.all.splice(cfg_obj.prj.all.findIndex((element) => element.name === arg),1);
+          fs.writeJsonSync(cfg_path, cfg_obj)        
+        } else {
+          console.log('Project with name "' + arg + '" not exist!')
+        }  
+      }
+      if(arg.substring(0,2) === '--') {
+        act_arg = arg;
+      } else {
+        act_arg = "";
+      }
     }
   }
+  done();
   return;
 });
