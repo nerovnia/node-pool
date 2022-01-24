@@ -16,7 +16,7 @@ gulp.task('new-project', function (done) {
     for(let arg of process.argv) {
       if ((arg.length != 0) && (arg.substring(0,2) != '--') && (act_arg === '--prj')) {
         if(!cfg_obj.prj.all.some(e => e.name === arg)) {
-          cfg_obj.prj.cfg.arr_src_dir.forEach(element => fs.ensureDirSync(element + arg));
+          cfg_obj.prj.cfg.arr_src_dir.forEach(element => fs.ensureDirSync(cfg_obj.prj.cfg.prj_dir + element  + '/'  + arg));
           cfg_obj.prj.all.push({
               name: arg
           });

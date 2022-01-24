@@ -16,7 +16,7 @@ gulp.task('del-project', function (done) {
     for(let arg of process.argv) {
       if ((arg.length != 0) && (arg.substring(0,2) != '--') && (act_arg === '--prj')) {
         if(cfg_obj.prj.all.some(e => e.name === arg)) {
-          cfg_obj.prj.cfg.arr_src_dir.forEach(element => fs.removeSync(element + arg));
+          cfg_obj.prj.cfg.arr_src_dir.forEach(element => fs.removeSync(cfg_obj.prj.cfg.prj_dir + element + '/' + arg));
           cfg_obj.prj.all.splice(cfg_obj.prj.all.findIndex((element) => element.name === arg),1);
           fs.writeJsonSync(cfg_path, cfg_obj)        
         } else {

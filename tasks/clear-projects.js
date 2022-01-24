@@ -9,7 +9,7 @@ const fs = require('fs');
 
 const cfg_path = './prj-conf.json'
 
-gulp.task('test', function (done) {
+gulp.task('clear-projects', function (done) {
   fs.readFile(cfg_path, 'utf8', (err, data) => {
     if (err) throw err;
     const cfg_obj = JSON.parse(data);
@@ -17,7 +17,7 @@ gulp.task('test', function (done) {
       let arr_ind_del_prg = [];
       cfg_obj.prj.all.forEach((prj_obj, i_prj_obj) => {
         cfg_obj.prj.cfg.arr_src_dir.forEach(element => {
-          fs.rmSync(element + prj_obj.name, { recursive: true });
+          fs.rmSync(cfg_obj.prj.cfg.prj_dir + element + '/'  + prj_obj.name, { recursive: true });
           arr_ind_del_prg.push(i_prj_obj);
         });
       });

@@ -1,14 +1,22 @@
 {
   "prj": {
     "cfg": {
+      "prj_json": "./src/data/prj.json",
+      "start_route": "prj/",
+      "tmpl_dir": "./tmpl/",
       "backup_dir": "./backup",
+      "prj_dir": "./src/",
+      "prj_route_path": "data/proj-dir/",
+      "prj_route_file": "routes.json",
       "arr_src_dir": [
-        "./src/public/javascripts/",
-        "./src/public/stylesheets/",
-        "./src/views/",
-        "./src/public/images/"
+        "data/proj-dir",
+        "public/javascripts/proj-dir",
+        "public/stylesheets/proj-dir",
+        "views/proj-dir",
+        "public/images/proj-dir"
       ]
     },
-    "all": []
+    "all": [
+    ]
   }
 }

@@ -19,7 +19,7 @@ gulp backup-projects
 
 gulp restore-projects
 
-gulp clear-projects
+gulp clear-projects [worked full]
 
 ### List projects directory:
 

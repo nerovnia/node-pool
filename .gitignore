@@ -112,3 +112,6 @@ build/
 tmp/
 tasks/test.js
 prj-conf.json
+test-prj-conf.json
+proj-dir/
+src/data
