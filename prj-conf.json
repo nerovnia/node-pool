@@ -1,7 +1,7 @@
 {
   "prj": {
     "cfg": {
-      "prj_json": "./src/data/prj.json",
+      "projects_cfg": "./src/data/projects.json",
       "start_route": "prj/",
       "tmpl_dir": "./tmpl/",
       "backup_dir": "./backup",
@@ -15,8 +15,6 @@
         "views/proj-dir",
         "public/images/proj-dir"
       ]
-    },
-    "all": [
-    ]
+    }
   }
 }
